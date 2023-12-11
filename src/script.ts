@@ -9,13 +9,13 @@ const nextEl = (numbersVal) => {
   // check if there is value.
   if (numbersVal) {
     // check if index num is greater then 5
-    indexNum += 1;
 
     //if else lader
-    if (indexNum >= numberInputs.length) {
+    if (indexNum >= numberInputs.length - 1) {
       console.log("no boxes left");
       numberInputs[indexNum].blur();
     } else {
+      indexNum += 1;
       // else keep going
       numberInputs[indexNum].focus();
       console.log(indexNum);
