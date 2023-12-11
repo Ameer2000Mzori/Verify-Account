@@ -7,10 +7,13 @@ let indexNum = 0;
 // functions
 const nextEl = (numbersVal) => {
   indexNum += 1;
+  // check if there is value.
   if (numbersVal) {
-    if (indexNum >= 5) {
+    // check if index num is greater then 5
+    if (indexNum >= numberInputs.length) {
       console.log("no boxes left");
     } else {
+      // else keep going
       numberInputs[indexNum].focus();
       console.log(indexNum);
     }
