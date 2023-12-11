@@ -8,6 +8,7 @@ var nextEl = function (numbersVal) {
     if (numbersVal) {
         // check if index num is greater then 5
         indexNum += 1;
+        //if else lader
         if (indexNum >= numberInputs.length) {
             console.log("no boxes left");
             numberInputs[indexNum].blur();
@@ -32,6 +33,7 @@ var deleteNum = function (keyDownVal) {
                 numberInputs[indexNum].focus();
             }
         }
+        //if else lader
         if (indexNum <= 0) {
             indexNum += 0;
         }

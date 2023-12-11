@@ -10,6 +10,8 @@ const nextEl = (numbersVal) => {
   if (numbersVal) {
     // check if index num is greater then 5
     indexNum += 1;
+
+    //if else lader
     if (indexNum >= numberInputs.length) {
       console.log("no boxes left");
       numberInputs[indexNum].blur();
@@ -35,6 +37,7 @@ const deleteNum = (keyDownVal) => {
       }
     }
 
+    //if else lader
     if (indexNum <= 0) {
       indexNum += 0;
     } else {
