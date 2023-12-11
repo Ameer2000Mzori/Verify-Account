@@ -6,12 +6,13 @@ let indexNum = 0;
 
 // functions
 const nextEl = (numbersVal) => {
-  indexNum += 1;
   // check if there is value.
   if (numbersVal) {
     // check if index num is greater then 5
+    indexNum += 1;
     if (indexNum >= numberInputs.length) {
       console.log("no boxes left");
+      numberInputs[indexNum].blur();
     } else {
       // else keep going
       numberInputs[indexNum].focus();
@@ -25,5 +26,32 @@ numberInputs.forEach((input) => {
   input.addEventListener("input", (e: any) => {
     let numbersVal = e.target.value;
     nextEl(numbersVal);
+  });
+});
+
+numberInputs.forEach((keyDowns) => {
+  keyDowns.addEventListener("keydown", (e: any) => {
+    // getting keydown event
+    let keyDownVal = e.key;
+    // checking if user want to delete
+    if (keyDownVal === "Backspace") {
+      // cecking if index num is lower then 0 else keep
+      for (let valuesOf of numberInputs) {
+        if (numberInputs[indexNum] === "") {
+          console.log(valuesOf);
+          indexNum -= 1;
+          numberInputs[indexNum].focus();
+        }
+      }
+
+      if (indexNum <= 0) {
+        indexNum += 0;
+      } else {
+        indexNum -= 1;
+      }
+      numberInputs[indexNum].focus();
+    }
+
+    // nextEl(numbersVal);
   });
 });
