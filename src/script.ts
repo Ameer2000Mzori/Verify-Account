@@ -21,6 +21,31 @@ const nextEl = (numbersVal) => {
   }
 };
 
+// delete  / backspace function
+
+const deleteNum = (keyDownVal) => {
+  // checking if user want to delete
+  if (keyDownVal === "Backspace") {
+    // cecking if index num is lower then 0 else keep
+    for (let valuesOf of numberInputs) {
+      if (numberInputs[indexNum] === "") {
+        console.log(valuesOf);
+        indexNum -= 1;
+        numberInputs[indexNum].focus();
+      }
+    }
+
+    if (indexNum <= 0) {
+      indexNum += 0;
+    } else {
+      indexNum -= 1;
+    }
+    numberInputs[indexNum].focus();
+  }
+
+  // nextEl(numbersVal);
+};
+
 // event linsters
 numberInputs.forEach((input) => {
   input.addEventListener("input", (e: any) => {
@@ -33,25 +58,6 @@ numberInputs.forEach((keyDowns) => {
   keyDowns.addEventListener("keydown", (e: any) => {
     // getting keydown event
     let keyDownVal = e.key;
-    // checking if user want to delete
-    if (keyDownVal === "Backspace") {
-      // cecking if index num is lower then 0 else keep
-      for (let valuesOf of numberInputs) {
-        if (numberInputs[indexNum] === "") {
-          console.log(valuesOf);
-          indexNum -= 1;
-          numberInputs[indexNum].focus();
-        }
-      }
-
-      if (indexNum <= 0) {
-        indexNum += 0;
-      } else {
-        indexNum -= 1;
-      }
-      numberInputs[indexNum].focus();
-    }
-
-    // nextEl(numbersVal);
+    deleteNum(keyDownVal);
   });
 });

@@ -19,6 +19,29 @@ var nextEl = function (numbersVal) {
         }
     }
 };
+// delete  / backspace function
+var deleteNum = function (keyDownVal) {
+    // checking if user want to delete
+    if (keyDownVal === "Backspace") {
+        // cecking if index num is lower then 0 else keep
+        for (var _i = 0, numberInputs_1 = numberInputs; _i < numberInputs_1.length; _i++) {
+            var valuesOf = numberInputs_1[_i];
+            if (numberInputs[indexNum] === "") {
+                console.log(valuesOf);
+                indexNum -= 1;
+                numberInputs[indexNum].focus();
+            }
+        }
+        if (indexNum <= 0) {
+            indexNum += 0;
+        }
+        else {
+            indexNum -= 1;
+        }
+        numberInputs[indexNum].focus();
+    }
+    // nextEl(numbersVal);
+};
 // event linsters
 numberInputs.forEach(function (input) {
     input.addEventListener("input", function (e) {
@@ -30,25 +53,6 @@ numberInputs.forEach(function (keyDowns) {
     keyDowns.addEventListener("keydown", function (e) {
         // getting keydown event
         var keyDownVal = e.key;
-        // checking if user want to delete
-        if (keyDownVal === "Backspace") {
-            // cecking if index num is lower then 0 else keep
-            for (var _i = 0, numberInputs_1 = numberInputs; _i < numberInputs_1.length; _i++) {
-                var valuesOf = numberInputs_1[_i];
-                if (numberInputs[indexNum] === "") {
-                    console.log(valuesOf);
-                    indexNum -= 1;
-                    numberInputs[indexNum].focus();
-                }
-            }
-            if (indexNum <= 0) {
-                indexNum += 0;
-            }
-            else {
-                indexNum -= 1;
-            }
-            numberInputs[indexNum].focus();
-        }
-        // nextEl(numbersVal);
+        deleteNum(keyDownVal);
     });
 });
