@@ -3,7 +3,46 @@
 $fontOne: "Roboto", sans-serif;
 $fontTwo: "Silkscreen", sans-serif;
 
+$colorOne: #00a9ff;
+$colorTwo: #89cff3;
+$colorThree: #a0e9ff;
+$colorFour: #cdf5fd;
+
 body {
   padding: 0;
   margin: 0;
+}
+
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: $colorOne;
+
+  .main {
+    height: 470px;
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: $fontOne;
+    background-color: $colorTwo;
+    padding: 5px;
+    border-radius: 1rem;
+    border: solid $colorThree 2px;
+
+    p {
+      background-color: $colorFour;
+      border-radius: 15px;
+      border: solid $colorOne 1px;
+      font-family: $fontOne;
+      font-weight: 600;
+      padding: 5px;
+    }
+  }
 }

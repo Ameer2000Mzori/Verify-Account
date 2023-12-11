@@ -4,3 +4,37 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #00a9ff;
+}
+
+.header .main {
+  height: 470px;
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  background-color: #89cff3;
+  padding: 5px;
+  border-radius: 1rem;
+  border: solid #a0e9ff 2px;
+}
+
+.header .main p {
+  background-color: #cdf5fd;
+  border-radius: 15px;
+  border: solid #00a9ff 1px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  padding: 5px;
+}
